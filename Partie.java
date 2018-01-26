@@ -10,13 +10,13 @@ public class Partie {
 
     private int p_id;
     private int p_score;
-    private ArrayList<Objectif> LesObjectifs;
-    private int e_id;
+    private ArrayList<Objectif> lesObjectifs;
+    private int eq_id;
 
-    public Partie(int p_id, int p_score, int e_id){
+    public Partie(int p_id, int p_score, int eq_id){
         this.p_id = p_id;
         this.p_score = p_score;
-        this.e_id = e_id;
+        this.eq_id = eq_id;
     }
 
     public int getP_id() {
@@ -32,18 +32,18 @@ public class Partie {
     }
 
     public ArrayList<Objectif> getLesObjectifs() {
-        return LesObjectifs;
+        return lesObjectifs;
     }
 
     public void setLesObjectifs(ArrayList<Objectif> lesObjectifs) {
-        LesObjectifs = lesObjectifs;
+        this.lesObjectifs = lesObjectifs;
     }
 
-    public int getE_id() {
-        return e_id;
+    public int getEq_id() {
+        return eq_id;
     }
 
-    public void setE_id(int e_id) {
-        this.e_id = e_id;
+    public void setE_id(int eq_id) {
+        this.eq_id = eq_id;
     }
 }

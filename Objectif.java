@@ -12,7 +12,7 @@ public class Objectif {
     private String o_nom;
     private String o_description;
     private int o_points_bonus;
-    ArrayList<Enigme> LesEnigmes;
+    ArrayList<Enigme> lesEnigmes;
 
     public Objectif(int o_id, String o_nom, String o_description, int o_points_bonus){
         this.o_id = o_id;
@@ -50,10 +50,9 @@ public class Objectif {
     }
 
     public ArrayList<Enigme> getLesEnigmes() {
-        return LesEnigmes;
+        return lesEnigmes;
     }
 
-    public void setLesEnigmes(ArrayList<Enigme> lesEnigmes) {
-        LesEnigmes = lesEnigmes;
+    public void setLesEnigmes(ArrayList<Enigme> lesEnigmes) {this.lesEnigmes = lesEnigmes;
     }
 }
