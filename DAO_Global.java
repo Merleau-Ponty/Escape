@@ -43,6 +43,7 @@ public class DAO_Global {
         ContentValues v = new ContentValues();
         v.put("eq_id", equipe.getEq_id());
         v.put("eq_nom", equipe.getEq_nom());
+        v.put("eq_numtel", equipe.getEq_numTel());
         v.put("a_id", equipe.getA_id());
         return maBase.insert("equipe", null, v);
     }

@@ -11,11 +11,13 @@ public class Equipe {
     private int eq_id;
     private String eq_nom;
     private int a_id;
+    private String eq_numTel;
     private ArrayList<Joueur> eq_lesjoueurs;
 
-    public Equipe(int eq_id, String eq_nom, int a_id){
+    public Equipe(int eq_id, String eq_nom, String eq_numtel,int a_id){
         this.eq_id = eq_id;
         this.eq_nom = eq_nom;
+        this.eq_numTel = eq_numtel;
         this.a_id = a_id;
     }
 
@@ -45,5 +47,21 @@ public class Equipe {
 
     public void setEq_lesjoueurs(ArrayList<Joueur> eq_lesjoueurs) {
         this.eq_lesjoueurs = eq_lesjoueurs;
+    }
+
+    public int getA_id() {
+        return a_id;
+    }
+
+    public void setA_id(int a_id) {
+        this.a_id = a_id;
+    }
+
+    public String getEq_numTel() {
+        return eq_numTel;
+    }
+
+    public void setEq_numTel(String eq_numTel) {
+        this.eq_numTel = eq_numTel;
     }
 }
