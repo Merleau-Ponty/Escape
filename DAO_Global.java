@@ -1,11 +1,13 @@
-package com.example.valou.ppe;
+// package com.example.sonia.escapegame.Support;
+
+/**
+ * Created by Sonia on 30/01/2018.
+ */
 
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.database.sqlite.SQLiteOpenHelper;
-
 import java.util.ArrayList;
 
 /**
@@ -128,4 +130,39 @@ public class DAO_Global {
         return laPartie;
     }
 
+    public ArrayList<ArrayList<String>> donneLesObjectifs() {
+        ArrayList<ArrayList<String>> liste=new ArrayList();
+        ArrayList<String> champ=new ArrayList();
+        Cursor c = maBase.rawQuery("select o_nom, o_description from objectif;", null);
+        int Compteur=0;
+        //Exemple
+        //[0][0] = Objectif 1 / [0][1] = Récupérer le passport
+        //[1][0] = Objectif 2 / [1][1] = Récupérer les billets
+        while (c.moveToNext()){
+            String nom = c.getString(0);
+            String description = c.getString(1);
+            champ.add(nom);
+            champ.add(description);
+            liste.add(0, champ);
+            Compteur+=1;
+        }
+        return liste;
+    }
+
+    //Renvoie un objet d'objectif
+    public Objectif donneLObjectif(String nom){
+        int o_id = 0;
+        String o_nom = "";
+        String o_description = "";
+        int o_points_bonus = 0;
+        Cursor c = maBase.rawQuery("select o_id, o_nom, o_description, o_points_bonus from Objectif where o_nom = "+ nom +";", null);
+        while (c.moveToNext()){
+            o_id = c.getInt(0);
+            o_nom = c.getString(1);
+            o_description = c.getString(2);
+            o_points_bonus = c.getInt(3);
+        }
+        Objectif lObjectif = new Objectif(o_id, o_nom, o_description, o_points_bonus);
+        return lObjectif;
+    }
 }
